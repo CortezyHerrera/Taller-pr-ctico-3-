@@ -6,54 +6,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taller el pito</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Bienvenidos a taller el pito</h1>
     <p>Ingrese los datos pedidos en el formulario</p>
     <div class="container-user">
-        <form class="row g-3">
+        <form class="row g-3" id="formain">
+            <h2>Datos del Cliente</h2>
             <div class="col-md-4">
-            <label for="validationDefault01" class="form-label">First name</label>
-            <input type="text" class="form-control" id="validationDefault01" value="Mark" required>
-            </div>
-            <div class="col-md-4">
-            <label for="validationDefault02" class="form-label">Last name</label>
-            <input type="text" class="form-control" id="validationDefault02" value="Otto" required>
-            </div>
-            <div class="col-md-4">
-            <label for="validationDefaultUsername" class="form-label">Username</label>
-            <div class="input-group">
-                <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
-            </div>
-            </div>
-            <div class="col-md-6">
-            <label for="validationDefault03" class="form-label">City</label>
-            <input type="text" class="form-control" id="validationDefault03" required>
-            </div>
+                <label for="validationCustom01" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" id="validationCustom01" required name="nombre-usuario">
+                <div class="valid-feedback">
+                 Gracias!
+                </div>
+              </div>
+      
+              <div class="col-md-4">
+                <label for="validationCustomUsername" class="form-label">DUI</label>
+                <div class="input-group has-validation">
+                  <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required name="dui">
+                  <div class="invalid-feedback">
+                    Por favor, ingrese su DUI.
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-md-4">
+                  <label for="validationCustomUsername" class="form-label">NIT</label>
+                  <div class="input-group has-validation">
+                    <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required name="nit">
+                    <div class="invalid-feedback">
+                      Por favor, ingrese su NIT.
+                    </div>
+                  </div>
+                </div>
+            <h2>Datos del vehículo</h2>
             <div class="col-md-3">
-            <label for="validationDefault04" class="form-label">State</label>
-            <select class="form-select" id="validationDefault04" required>
-                <option selected disabled value="">Choose...</option>
-                <option>...</option>
-            </select>
-            </div>
+                <label for="validationDefault04" class="form-label">Escoja la marca del vehículo</label>
+                <select class="form-select" id="options" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Option 1">Option 1</option>
+                    <option value="Option 2">Option 2</option>
+                    <option value="Option 3">Option 3</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationDefault04" class="form-label">Escoja el modelo del vehículo</label>
+                    <select class="form-select" id="choices"  >
+                        <option value="" disabled selected>Please select an option</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault01" class="form-label">Año del vehículo</label>
+                        <input type="number" class="form-control" id="validationDefault01"  required>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="validationDefault01" class="form-label">Color del vehículo</label>
+                        <input type="text" class="form-control" id="validationDefault01"  required>
+                      </div>
             <div class="col-md-3">
-            <label for="validationDefault05" class="form-label">Zip</label>
+            <label for="validationDefault05" class="form-label">Placa</label>
             <input type="text" class="form-control" id="validationDefault05" required>
             </div>
+            <div class="mb-3">
+                <label for="validationTextarea" class="form-label">Describa el problema que presenta su vehículo</label>
+                <textarea class="form-control" id="validationTextarea" placeholder="Fallo en el motor..." required></textarea>
+              </div>
             <div class="col-12">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                <label class="form-check-label" for="invalidCheck2">
-                Agree to terms and conditions
-                </label>
-            </div>
-            </div>
-            <div class="col-12">
-            <button class="btn btn-primary" type="submit">Submit form</button>
+            <button class="btn btn-primary" type="submit">Ingresar datos</button>
             </div>
         </form>
     </div>
+    <br>
+    <div class="tabla">
+    <table class="table" id="tableResults">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">DUI</th>
+            <th scope="col">NIT</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Año</th>
+            <th scope="col">Color</th>
+            <th scope="col">Placa</th>
+            <th scope="col">Falla</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+<script src="js/script.js"></script>
 </body>
 </html>
