@@ -1,0 +1,18 @@
+h1{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+.container-user{
+    width: 90%;
+    margin: 0 auto;
+    background-color: #F0D8D8;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.tabla{
+    width: 90%;
+    margin: 0 auto;
+}
